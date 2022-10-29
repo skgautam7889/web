@@ -11,23 +11,25 @@ import React from "react";
 import Navbar from "./components/common/Navbar";
 import Home from "./components/pages/Home";
 import AboutUs from "./components/pages/AboutUs";
+import ContactUs from "./components/pages/ContactUs";
+import Login from "./components/pages/Login";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 const App = () => {
 	return (
 		<>
-		<BrowserRouter>
-			<Navbar />
-			<Switch>
-				<Route exact path="/" component={Home} />
-				<Route exact path="/about" component={AboutUs} />
-				{/*<Route exact path="/service" component={Service} />
-				<Route exact path="/career" component={Career} />
-				<Route exact path="/contact" component={Contact} />
-				<Redirect to="/" /> */}
-			</Switch>
-			{/* <Footer /> */}
+			<BrowserRouter>
+				<Navbar />
+				<Switch>
+					
+					<Route exact path="/" component={Home} />
+					<Route exact path="/about" component={AboutUs} />
+					<Route exact path="/contact" component={ContactUs} />
+					<Route exact path="/login" component={Login} />
+					<Redirect to="/" />
+				</Switch>
+				{/* <Footer /> */}
 
-		</BrowserRouter>
+			</BrowserRouter>
 		</>
 	);
 };
