@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 // import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 // import "../node_modules/bootstrap/dist/js/bootstrap.min.js";
 // import Home from "./pages/Home";
@@ -14,22 +14,36 @@ import AboutUs from "./components/pages/AboutUs";
 import ContactUs from "./components/pages/ContactUs";
 import Login from "./components/pages/Login";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import Dashboard from "./components/pages/Dashboard";
+import React, { useState, useEffect } from 'react';
 const App = () => {
-	return (
-		<>
-			<BrowserRouter>
-				<Navbar />
-				<Switch>
-					
-					<Route exact path="/" component={Home} />
-					<Route exact path="/about" component={AboutUs} />
-					<Route exact path="/contact" component={ContactUs} />
-					<Route exact path="/login" component={Login} />
-					<Redirect to="/" />
-				</Switch>
-				{/* <Footer /> */}
+	const [isAuthenticated, setIsAuthenticated] = useState(null);
+	useEffect(() => {
+		setIsAuthenticated(JSON.parse(localStorage.getItem('is_authenticated')));
+	}, []);
 
-			</BrowserRouter>
+	return (
+		// <>
+		// 	<BrowserRouter>
+		// 		<Navbar />
+		// 		<Switch>
+
+		// 			<Route exact path="/" component={Home} />
+		// 			<Route exact path="/about" component={AboutUs} />
+		// 			<Route exact path="/contact" component={ContactUs} />
+		// 			<Route exact path="/login" component={Login} />
+		// 			<Redirect to="/" />
+		// 		</Switch>
+		// 		{/* <Footer /> */}
+
+		// 	</BrowserRouter>
+		// </>
+		<>
+			{isAuthenticated ? (
+				<Dashboard setIsAuthenticated={setIsAuthenticated} />
+			) : (
+				<Login setIsAuthenticated={setIsAuthenticated} />
+			)}
 		</>
 	);
 };
