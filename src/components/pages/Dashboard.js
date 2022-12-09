@@ -21,7 +21,8 @@ const Dashboard = (setIsAuthenticated) => {
                     willClose: () => {
                         localStorage.setItem('is_authenticated', false);
                         setIsAuthenticated(false);
-                        // window.location.href = '/';
+                        // window.location.href = '/';//
+                        
                     },
                 });
             }
