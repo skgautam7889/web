@@ -5,7 +5,7 @@ import firebaseConfig from "../../firebase/config";
 
 const Dashboard = () => {
   const { currentUser } = useContext(AuthContext);
-  // console.log("currentUser===>",currentUser);
+  console.log("currentUser===>",currentUser);
   if (!currentUser) {
     return <Redirect to="/login" />;
   }

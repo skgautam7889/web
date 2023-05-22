@@ -1,5 +1,5 @@
 import React from "react";
-import {Route, HashRouter } from "react-router-dom";
+import { Route, HashRouter } from "react-router-dom";
 import Home from "./components/Home";
 import Dashboard from "./components/Dashboard";
 import LogIn from "./components/LogIn";
@@ -18,12 +18,12 @@ const App = () => {
         </Switch>
       </Router> */}
       <HashRouter>
-      <Route exact path="/" component={Home} />
-          <Route exact path="/web" component={Home} />
-          <Route exact path="/dashboard" component={Dashboard} />
-          <Route exact path="/login" component={LogIn} />
-          <Route exact path="/signup" component={SignUp} />
-    </HashRouter>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/web" component={Home} />
+        <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/login" component={LogIn} />
+        <Route exact path="/signup" component={SignUp} />
+      </HashRouter>
     </AuthProvider>
   );
 };
